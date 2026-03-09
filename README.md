@@ -74,5 +74,12 @@ app/
 
 ## Licença
 
+©2026 Rede reab.LITA. Todos os direitos reservados.
+
+Hospital Universitário Onofre Lopes (HUOL) — Universidade Federal do Rio Grande do Norte (UFRN)
+
+
+## Licença
+
 Este projeto é fornecido como exemplo educacional.
 ```
