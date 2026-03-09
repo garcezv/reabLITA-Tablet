@@ -78,8 +78,3 @@ app/
 
 Hospital Universitário Onofre Lopes (HUOL) — Universidade Federal do Rio Grande do Norte (UFRN)
 
-
-## Licença
-
-Este projeto é fornecido como exemplo educacional.
-```
