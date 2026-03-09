@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/rl_bg">
+
+    <!-- Top App Bar -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="56dp"
+        android:background="@color/rl_card_bg" android:orientation="horizontal"
+        android:paddingHorizontal="16dp" android:gravity="center_vertical" android:elevation="2dp">
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:orientation="vertical" android:gravity="center_horizontal">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="@string/rede_label" android:textSize="8sp" android:textColor="@color/rl_primary"/>
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/app_logo_reab" android:textSize="18sp"
+                    android:textStyle="bold" android:textColor="@color/rl_primary"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="." android:textSize="18sp" android:textColor="@color/rl_text_hint"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/app_logo_lita" android:textSize="18sp"
+                    android:textStyle="bold" android:textColor="@color/rl_text_secondary"/>
+            </LinearLayout>
+        </LinearLayout>
+        <View android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1"/>
+        <LinearLayout android:id="@+id/llLanguageSelector" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:orientation="horizontal"
+            android:gravity="center_vertical" android:padding="8dp"
+            android:clickable="true" android:focusable="true"
+            android:background="?attr/selectableItemBackgroundBorderless">
+            <ImageView android:layout_width="18dp" android:layout_height="18dp"
+                android:src="@drawable/ic_globe" app:tint="@color/rl_primary"/>
+            <TextView android:id="@+id/tvLanguageLabel" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:text="@string/lang_pt_br"
+                android:textColor="@color/rl_primary" android:textSize="14sp" android:layout_marginStart="4dp"/>
+        </LinearLayout>
+        <ImageButton android:id="@+id/btnMenu" android:layout_width="40dp" android:layout_height="40dp"
+            android:src="@drawable/ic_hamburger" app:tint="@color/rl_text_secondary"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_marginStart="4dp" android:contentDescription="Menu"/>
+    </LinearLayout>
+
+    <!-- Sub header with back button -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:background="@color/rl_sub_header" android:orientation="horizontal"
+        android:paddingHorizontal="8dp" android:paddingVertical="10dp" android:gravity="center_vertical">
+        <ImageButton android:id="@+id/btnBack" android:layout_width="36dp" android:layout_height="36dp"
+            android:src="@drawable/ic_back" app:tint="@color/rl_primary"
+            android:background="?attr/selectableItemBackgroundBorderless" android:contentDescription="Voltar"/>
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+            android:text="@string/instructions_page_title" android:textSize="14sp"
+            android:textColor="@color/rl_text_primary" android:layout_marginStart="4dp"/>
+    </LinearLayout>
+
+    <!-- Content -->
+    <ScrollView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/page_padding_h"
+            android:paddingTop="@dimen/page_padding_v"
+            android:paddingBottom="@dimen/page_padding_v">
+
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="@string/instructions_title" android:textSize="22sp"
+                android:textStyle="bold" android:textColor="@color/rl_text_primary"
+                android:layout_marginBottom="6dp"/>
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="@string/instructions_subtitle" android:textSize="13sp"
+                android:textColor="@color/rl_text_secondary" android:layout_marginBottom="20dp"/>
+
+            <!-- Expandable section 1: Checklist -->
+            <androidx.cardview.widget.CardView android:layout_width="match_parent"
+                android:layout_height="wrap_content" app:cardElevation="1dp"
+                app:cardCornerRadius="6dp" app:cardBackgroundColor="@color/rl_card_bg"
+                android:layout_marginBottom="10dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <LinearLayout android:id="@+id/llChecklistHeader"
+                        android:layout_width="match_parent" android:layout_height="52dp"
+                        android:orientation="horizontal" android:gravity="center_vertical"
+                        android:paddingHorizontal="16dp" android:clickable="true" android:focusable="true"
+                        android:background="?attr/selectableItemBackground">
+                        <ImageView android:layout_width="20dp" android:layout_height="20dp"
+                            android:src="@drawable/ic_checklist" app:tint="@color/rl_text_secondary"
+                            android:layout_marginEnd="10dp"/>
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="@string/checklist_title"
+                            android:textSize="14sp" android:textColor="@color/rl_text_primary"/>
+                        <ImageView android:id="@+id/ivChecklistArrow" android:layout_width="20dp"
+                            android:layout_height="20dp" android:src="@drawable/ic_chevron_down"
+                            app:tint="@color/rl_text_secondary"/>
+                    </LinearLayout>
+                    <LinearLayout android:id="@+id/llChecklistContent"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="vertical" android:paddingHorizontal="16dp"
+                        android:paddingBottom="14dp" android:visibility="gone">
+                        <View android:layout_width="match_parent" android:layout_height="1dp"
+                            android:background="@color/rl_divider" android:layout_marginBottom="12dp"/>
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:text="@string/checklist_content" android:textSize="13sp"
+                            android:textColor="@color/rl_text_secondary" android:lineSpacingMultiplier="1.5"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Expandable section 2: Doubts -->
+            <androidx.cardview.widget.CardView android:layout_width="match_parent"
+                android:layout_height="wrap_content" app:cardElevation="1dp"
+                app:cardCornerRadius="6dp" app:cardBackgroundColor="@color/rl_card_bg"
+                android:layout_marginBottom="10dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <LinearLayout android:id="@+id/llDoubtsHeader"
+                        android:layout_width="match_parent" android:layout_height="52dp"
+                        android:orientation="horizontal" android:gravity="center_vertical"
+                        android:paddingHorizontal="16dp" android:clickable="true" android:focusable="true"
+                        android:background="?attr/selectableItemBackground">
+                        <ImageView android:layout_width="20dp" android:layout_height="20dp"
+                            android:src="@drawable/ic_help_outline" app:tint="@color/rl_text_secondary"
+                            android:layout_marginEnd="10dp"/>
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="@string/doubts_title"
+                            android:textSize="14sp" android:textColor="@color/rl_text_primary"/>
+                        <ImageView android:id="@+id/ivDoubtsArrow" android:layout_width="20dp"
+                            android:layout_height="20dp" android:src="@drawable/ic_chevron_down"
+                            app:tint="@color/rl_text_secondary"/>
+                    </LinearLayout>
+                    <LinearLayout android:id="@+id/llDoubtsContent"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="vertical" android:paddingHorizontal="16dp"
+                        android:paddingBottom="14dp" android:visibility="gone">
+                        <View android:layout_width="match_parent" android:layout_height="1dp"
+                            android:background="@color/rl_divider" android:layout_marginBottom="12dp"/>
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:text="@string/doubts_content" android:textSize="13sp"
+                            android:textColor="@color/rl_text_secondary" android:lineSpacingMultiplier="1.5"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Expandable section 3: Responsibilities -->
+            <androidx.cardview.widget.CardView android:layout_width="match_parent"
+                android:layout_height="wrap_content" app:cardElevation="1dp"
+                app:cardCornerRadius="6dp" app:cardBackgroundColor="@color/rl_card_bg">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <LinearLayout android:id="@+id/llRespHeader"
+                        android:layout_width="match_parent" android:layout_height="52dp"
+                        android:orientation="horizontal" android:gravity="center_vertical"
+                        android:paddingHorizontal="16dp" android:clickable="true" android:focusable="true"
+                        android:background="?attr/selectableItemBackground">
+                        <ImageView android:layout_width="20dp" android:layout_height="20dp"
+                            android:src="@drawable/ic_people_outline" app:tint="@color/rl_text_secondary"
+                            android:layout_marginEnd="10dp"/>
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="@string/responsibilities_title"
+                            android:textSize="14sp" android:textColor="@color/rl_text_primary"/>
+                        <ImageView android:id="@+id/ivRespArrow" android:layout_width="20dp"
+                            android:layout_height="20dp" android:src="@drawable/ic_chevron_down"
+                            app:tint="@color/rl_text_secondary"/>
+                    </LinearLayout>
+                    <LinearLayout android:id="@+id/llRespContent"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="vertical" android:paddingHorizontal="16dp"
+                        android:paddingBottom="14dp" android:visibility="gone">
+                        <View android:layout_width="match_parent" android:layout_height="1dp"
+                            android:background="@color/rl_divider" android:layout_marginBottom="12dp"/>
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:text="@string/responsibilities_content" android:textSize="13sp"
+                            android:textColor="@color/rl_text_secondary" android:lineSpacingMultiplier="1.5"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

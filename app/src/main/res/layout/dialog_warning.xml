@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_warning_dialog"
+    android:paddingStart="24dp"
+    android:paddingEnd="24dp"
+    android:paddingTop="28dp"
+    android:paddingBottom="20dp">
+
+    <TextView
+        android:id="@+id/tvWarningTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cancelar alterações"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/rl_warning_text"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:id="@+id/tvWarningMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tem certeza que deseja cancelar? Essa ação não poderá ser desfeita."
+        android:textSize="16sp"
+        android:textColor="@color/rl_warning_text"
+        android:lineSpacingMultiplier="1.3"
+        android:layout_marginBottom="28dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end|center_vertical">
+
+        <Button
+            android:id="@+id/btnWarningBack"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:text="Voltar"
+            android:textColor="@color/rl_warning_text"
+            android:textSize="16sp"
+            android:paddingHorizontal="24dp"
+            android:layout_marginEnd="8dp"/>
+
+        <Button
+            android:id="@+id/btnWarningConfirm"
+            android:layout_width="wrap_content"
+            android:layout_height="52dp"
+            android:text="Cancelar alterações"
+            android:textColor="@color/rl_warning_text"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:backgroundTint="@color/rl_warning_btn"
+            android:paddingHorizontal="24dp"
+            android:stateListAnimator="@null"/>
+    </LinearLayout>
+</LinearLayout>

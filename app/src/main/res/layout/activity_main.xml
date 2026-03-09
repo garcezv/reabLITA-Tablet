@@ -1,0 +1,648 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="@color/bg_primary"
+    android:padding="10dp">
+
+    <!-- ===== PAINEL ESQUERDO: Configuração + Gráfico ===== -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1.35"
+        android:layout_marginEnd="5dp"
+        app:cardBackgroundColor="@color/bg_card"
+        app:cardCornerRadius="14dp"
+        app:cardElevation="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/title"
+                android:textSize="11sp"
+                android:textColor="@color/text_muted"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- Grade de configuração: 4 colunas × 2 linhas -->
+            <androidx.gridlayout.widget.GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:columnCount="4">
+
+                <!-- Frequência -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="4dp"
+                    app:layout_columnWeight="1">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/frequency_label"
+                        android:textSize="11sp"
+                        android:textColor="@color/text_muted"
+                        android:layout_marginBottom="4dp"/>
+                    <Spinner
+                        android:id="@+id/spinnerFrequency"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:background="@drawable/spinner_bg"
+                        android:padding="8dp"/>
+                </LinearLayout>
+
+                <!-- Início dB HL -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="4dp"
+                    app:layout_columnWeight="1">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/start_db_label"
+                        android:textSize="11sp"
+                        android:textColor="@color/text_muted"
+                        android:layout_marginBottom="4dp"/>
+                    <EditText
+                        android:id="@+id/editStartDb"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:background="@drawable/edit_text_bg"
+                        android:padding="8dp"
+                        android:inputType="numberSigned"
+                        android:text="40"
+                        android:textColor="@color/text_primary"
+                        android:textSize="14sp"/>
+                </LinearLayout>
+
+                <!-- Janela máx. -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="4dp"
+                    app:layout_columnWeight="1">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/window_max_label"
+                        android:textSize="11sp"
+                        android:textColor="@color/text_muted"
+                        android:layout_marginBottom="4dp"/>
+                    <EditText
+                        android:id="@+id/editWindowMax"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:background="@drawable/edit_text_bg"
+                        android:padding="8dp"
+                        android:inputType="number"
+                        android:text="1500"
+                        android:textColor="@color/text_primary"
+                        android:textSize="14sp"/>
+                </LinearLayout>
+
+                <!-- Margem de segurança -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="4dp"
+                    app:layout_columnWeight="1">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/safety_margin_label"
+                        android:textSize="11sp"
+                        android:textColor="@color/text_muted"
+                        android:layout_marginBottom="4dp"/>
+                    <EditText
+                        android:id="@+id/editSafetyMargin"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:background="@drawable/edit_text_bg"
+                        android:padding="8dp"
+                        android:inputType="number"
+                        android:text="200"
+                        android:textColor="@color/text_primary"
+                        android:textSize="14sp"/>
+                </LinearLayout>
+
+                <!-- Duração do tom -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="4dp"
+                    app:layout_columnWeight="1">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tone_duration_label"
+                        android:textSize="11sp"
+                        android:textColor="@color/text_muted"
+                        android:layout_marginBottom="4dp"/>
+                    <EditText
+                        android:id="@+id/editToneDuration"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:background="@drawable/edit_text_bg"
+                        android:padding="8dp"
+                        android:inputType="number"
+                        android:text="350"
+                        android:textColor="@color/text_primary"
+                        android:textSize="14sp"/>
+                </LinearLayout>
+
+                <!-- Descida (dB) -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="4dp"
+                    app:layout_columnWeight="1">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/down_step_label"
+                        android:textSize="11sp"
+                        android:textColor="@color/text_muted"
+                        android:layout_marginBottom="4dp"/>
+                    <EditText
+                        android:id="@+id/editDownStep"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:background="@drawable/edit_text_bg"
+                        android:padding="8dp"
+                        android:inputType="number"
+                        android:text="10"
+                        android:textColor="@color/text_primary"
+                        android:textSize="14sp"/>
+                </LinearLayout>
+
+                <!-- Subida (dB) -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="4dp"
+                    app:layout_columnWeight="1">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/up_step_label"
+                        android:textSize="11sp"
+                        android:textColor="@color/text_muted"
+                        android:layout_marginBottom="4dp"/>
+                    <EditText
+                        android:id="@+id/editUpStep"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:background="@drawable/edit_text_bg"
+                        android:padding="8dp"
+                        android:inputType="number"
+                        android:text="5"
+                        android:textColor="@color/text_primary"
+                        android:textSize="14sp"/>
+                </LinearLayout>
+
+                <!-- Volume (SeekBar) -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="4dp"
+                    app:layout_columnWeight="1">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="4dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/volume_label"
+                            android:textSize="11sp"
+                            android:textColor="@color/text_muted"/>
+                        <TextView
+                            android:id="@+id/tvVolumeValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="70"
+                            android:textSize="11sp"
+                            android:textColor="@color/color_accent"
+                            android:fontFamily="monospace"/>
+                    </LinearLayout>
+                    <SeekBar
+                        android:id="@+id/seekBarVolume"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:max="100"
+                        android:progress="70"
+                        android:progressTint="@color/color_accent"
+                        android:thumbTint="@color/color_accent"/>
+                </LinearLayout>
+
+            </androidx.gridlayout.widget.GridLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/border_color"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="6dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/note_text"
+                android:textSize="11sp"
+                android:textColor="@color/text_muted"
+                android:lineSpacingMultiplier="1.4"
+                android:maxLines="2"
+                android:ellipsize="end"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/border_color"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="6dp"/>
+
+            <!-- Gráfico — ocupa o espaço restante -->
+            <com.audiometry.threshold.ChartView
+                android:id="@+id/chartView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@color/input_bg"/>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- ===== PAINEL DIREITO: Controles + Status + OUVI + Log ===== -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:layout_marginStart="5dp"
+        app:cardBackgroundColor="@color/bg_card"
+        app:cardCornerRadius="14dp"
+        app:cardElevation="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <!-- Botões de ação + indicador de estado -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <Button
+                    android:id="@+id/btnStart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="44dp"
+                    android:text="@string/btn_start"
+                    android:textColor="@color/text_primary"
+                    android:background="@drawable/button_primary_bg"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"/>
+
+                <Button
+                    android:id="@+id/btnStop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="44dp"
+                    android:text="@string/btn_stop"
+                    android:textColor="@color/text_primary"
+                    android:background="@drawable/button_bg"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:layout_marginStart="8dp"
+                    android:enabled="false"/>
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/tvState"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="pronto"
+                    android:textSize="13sp"
+                    android:textColor="@color/text_muted"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:paddingTop="6dp"
+                    android:paddingBottom="6dp"
+                    android:background="@drawable/pill_bg"/>
+
+            </LinearLayout>
+
+            <!-- Linha de status 1: #, dB, Track -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:id="@+id/tvTrial"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="34dp"
+                    android:gravity="center_vertical"
+                    android:text="# 0"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_muted"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:background="@drawable/pill_bg"
+                    android:layout_marginEnd="4dp"/>
+
+                <TextView
+                    android:id="@+id/tvDb"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="34dp"
+                    android:gravity="center_vertical"
+                    android:text="dB —"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_muted"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:background="@drawable/pill_bg"
+                    android:layout_marginEnd="4dp"/>
+
+                <TextView
+                    android:id="@+id/tvTrack"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="34dp"
+                    android:gravity="center_vertical"
+                    android:text="Track —"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_muted"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:background="@drawable/pill_bg"/>
+
+            </LinearLayout>
+
+            <!-- Linha de status 2: ISI, SOA, Candidato -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:id="@+id/tvIsi"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="34dp"
+                    android:gravity="center_vertical"
+                    android:text="ISI —"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_muted"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:background="@drawable/pill_bg"
+                    android:layout_marginEnd="4dp"/>
+
+                <TextView
+                    android:id="@+id/tvSoa"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="34dp"
+                    android:gravity="center_vertical"
+                    android:text="SOA —"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_muted"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:background="@drawable/pill_bg"
+                    android:layout_marginEnd="4dp"/>
+
+                <TextView
+                    android:id="@+id/tvCandidate"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="34dp"
+                    android:gravity="center_vertical"
+                    android:text="Cand. —"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_muted"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:background="@drawable/pill_bg"/>
+
+            </LinearLayout>
+
+            <!-- Resultado: largura total -->
+            <TextView
+                android:id="@+id/tvResult"
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:gravity="center_vertical"
+                android:text="Resultado —"
+                android:textSize="13sp"
+                android:textColor="@color/text_muted"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:background="@drawable/pill_bg"
+                android:layout_marginTop="5dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/border_color"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- Botão OUVI (grande, toque fácil) -->
+            <Button
+                android:id="@+id/btnHeard"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:text="@string/btn_heard"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"
+                android:background="@drawable/button_ouvi_bg"
+                android:enabled="false"
+                android:stateListAnimator="@null"/>
+
+            <!-- Contagem regressiva da janela -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Janela"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_muted"/>
+
+                <ProgressBar
+                    android:id="@+id/progressWindow"
+                    style="@android:style/Widget.ProgressBar.Horizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="10dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:max="1000"
+                    android:progress="0"
+                    android:indeterminate="false"
+                    android:progressTint="@color/color_accent"
+                    android:progressBackgroundTint="@color/input_bg"/>
+
+                <TextView
+                    android:id="@+id/tvWindow"
+                    android:layout_width="52dp"
+                    android:layout_height="wrap_content"
+                    android:text="— ms"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_muted"
+                    android:fontFamily="monospace"
+                    android:gravity="end"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/border_color"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="6dp"/>
+
+            <!-- Log do exame -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/log_title"
+                android:textSize="13sp"
+                android:textColor="@color/text_primary"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp"/>
+
+            <!-- Cabeçalho da tabela de log (pesos iguais ao item_log.xml) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:background="@color/input_bg">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="0.6"
+                    android:layout_height="wrap_content"
+                    android:text="#"
+                    android:textSize="11sp"
+                    android:textColor="@color/text_muted"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="0.8"
+                    android:layout_height="wrap_content"
+                    android:text="dB"
+                    android:textSize="11sp"
+                    android:textColor="@color/text_muted"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="ISI"
+                    android:textSize="11sp"
+                    android:textColor="@color/text_muted"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Janela"
+                    android:textSize="11sp"
+                    android:textColor="@color/text_muted"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Track"
+                    android:textSize="11sp"
+                    android:textColor="@color/text_muted"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1.2"
+                    android:layout_height="wrap_content"
+                    android:text="Resposta"
+                    android:textSize="11sp"
+                    android:textColor="@color/text_muted"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="2/3"
+                    android:textSize="11sp"
+                    android:textColor="@color/text_muted"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace"/>
+
+            </LinearLayout>
+
+            <!-- Entradas do log — preenche o espaço restante -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerLog"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@color/input_bg"/>
+
+            <!-- Nota do critério -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/log_criterion"
+                android:textSize="11sp"
+                android:textColor="@color/text_muted"
+                android:lineSpacingMultiplier="1.4"
+                android:layout_marginTop="6dp"/>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Legacy MainActivity dimensions (tablet sw720dp / 10") -->
+    <dimen name="main_padding">40dp</dimen>
+    <dimen name="card_margin_bottom">28dp</dimen>
+    <dimen name="card_padding">32dp</dimen>
+    <dimen name="grid_item_padding">12dp</dimen>
+    <dimen name="chart_height">460dp</dimen>
+    <dimen name="log_height">560dp</dimen>
+
+    <!-- Adaptive layout dimensions (10" tablet — target device) -->
+    <dimen name="page_padding_h">100dp</dimen>
+    <dimen name="page_padding_v">40dp</dimen>
+    <dimen name="button_height">56dp</dimen>
+    <dimen name="button_height_small">48dp</dimen>
+    <dimen name="home_logo_height">170dp</dimen>
+    <dimen name="speedometer_width">400dp</dimen>
+    <dimen name="speedometer_height">200dp</dimen>
+    <dimen name="noise_db_text_size">52sp</dimen>
+    <dimen name="app_bar_height">72dp</dimen>
+    <dimen name="side_menu_avatar_size">60dp</dimen>
+    <dimen name="text_size_h1">26sp</dimen>
+    <dimen name="text_size_h2">22sp</dimen>
+    <dimen name="text_size_body">16sp</dimen>
+    <dimen name="text_size_small">14sp</dimen>
+    <dimen name="text_size_caption">13sp</dimen>
+</resources>

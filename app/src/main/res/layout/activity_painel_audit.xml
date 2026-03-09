@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/rl_bg">
+
+    <!-- Top App Bar -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="56dp"
+        android:background="@color/rl_card_bg" android:orientation="horizontal"
+        android:paddingHorizontal="16dp" android:gravity="center_vertical" android:elevation="2dp">
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:orientation="vertical" android:gravity="center_horizontal">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="@string/rede_label" android:textSize="8sp" android:textColor="@color/rl_primary"/>
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/app_logo_reab" android:textSize="18sp"
+                    android:textStyle="bold" android:textColor="@color/rl_primary"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="." android:textSize="18sp" android:textColor="@color/rl_text_hint"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/app_logo_lita" android:textSize="18sp"
+                    android:textStyle="bold" android:textColor="@color/rl_text_secondary"/>
+            </LinearLayout>
+        </LinearLayout>
+        <View android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1"/>
+        <LinearLayout android:id="@+id/llLanguageSelector" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:orientation="horizontal"
+            android:gravity="center_vertical" android:padding="8dp"
+            android:clickable="true" android:focusable="true"
+            android:background="?attr/selectableItemBackgroundBorderless">
+            <ImageView android:layout_width="18dp" android:layout_height="18dp"
+                android:src="@drawable/ic_globe" app:tint="@color/rl_primary"/>
+            <TextView android:id="@+id/tvLanguageLabel" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:text="@string/lang_pt_br"
+                android:textColor="@color/rl_primary" android:textSize="14sp" android:layout_marginStart="4dp"/>
+        </LinearLayout>
+        <ImageButton android:id="@+id/btnMenu" android:layout_width="40dp" android:layout_height="40dp"
+            android:src="@drawable/ic_hamburger" app:tint="@color/rl_text_secondary"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_marginStart="4dp" android:contentDescription="Menu"/>
+    </LinearLayout>
+
+    <!-- Sub header with back button -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:background="@color/rl_sub_header" android:orientation="horizontal"
+        android:paddingHorizontal="8dp" android:paddingVertical="10dp" android:gravity="center_vertical">
+        <ImageButton android:id="@+id/btnBack" android:layout_width="36dp" android:layout_height="36dp"
+            android:src="@drawable/ic_back" app:tint="@color/rl_primary"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Voltar"/>
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+            android:text="@string/panel_audit_title" android:textSize="14sp"
+            android:textColor="@color/rl_text_primary" android:layout_marginStart="4dp"/>
+        <Button android:id="@+id/btnLearnMore" style="@style/RL.Button.Text"
+            android:layout_width="wrap_content" android:layout_height="32dp"
+            android:text="@string/btn_learn_more" android:textSize="12sp"
+            android:textColor="@color/rl_text_secondary" android:background="@drawable/bg_btn_gray_light"
+            android:paddingHorizontal="12dp" android:paddingVertical="0dp"/>
+    </LinearLayout>
+
+    <!-- aud.IT logo + tabs -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:background="@color/rl_card_bg"
+        android:paddingHorizontal="24dp" android:paddingVertical="16dp">
+        <!-- aud.IT logo image -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:src="@drawable/logo_audit"
+            android:scaleType="fitCenter"
+            android:contentDescription="aud.IT — Triagem Auditiva Pediátrica"
+            android:layout_marginBottom="12dp"/>
+        <!-- 4 Tab buttons -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button android:id="@+id/btnInstructions" style="@style/RL.Button.Outlined"
+                android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1"
+                android:text="@string/btn_instructions" android:textSize="13sp"
+                android:textColor="@color/rl_primary" app:strokeColor="@color/rl_primary"
+                android:layout_marginEnd="8dp"/>
+            <Button android:id="@+id/btnCheckNoise" style="@style/RL.Button"
+                android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1"
+                android:text="@string/btn_check_noise" android:textSize="13sp"
+                android:backgroundTint="@color/rl_primary" android:textColor="@color/rl_white"
+                android:layout_marginEnd="8dp"/>
+            <Button android:id="@+id/btnProtocol" style="@style/RL.Button.Outlined"
+                android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1"
+                android:text="@string/btn_protocol" android:textSize="13sp"
+                android:textColor="@color/rl_text_hint" app:strokeColor="@color/rl_divider"
+                android:enabled="false" android:layout_marginEnd="8dp"/>
+            <Button android:id="@+id/btnCalibration" style="@style/RL.Button.Outlined"
+                android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1"
+                android:text="@string/btn_calibration" android:textSize="13sp"
+                android:textColor="@color/rl_text_hint" app:strokeColor="@color/rl_divider"
+                android:enabled="false"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Participants card + start button -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1" android:orientation="vertical">
+        <ScrollView android:layout_width="match_parent" android:layout_height="0dp"
+            android:layout_weight="1">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="16dp">
+                <androidx.cardview.widget.CardView android:layout_width="match_parent"
+                    android:layout_height="wrap_content" app:cardElevation="2dp"
+                    app:cardCornerRadius="8dp" app:cardBackgroundColor="@color/rl_card_bg">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="vertical" android:padding="16dp">
+
+                        <!-- Header row -->
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:orientation="horizontal" android:gravity="center_vertical"
+                            android:layout_marginBottom="12dp">
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                                android:layout_weight="1" android:text="@string/select_participants_title"
+                                android:textSize="16sp" android:textStyle="bold"
+                                android:textColor="@color/rl_text_primary"/>
+                            <Button android:id="@+id/btnRegisterParticipant" style="@style/RL.Button.Text"
+                                android:layout_width="wrap_content" android:layout_height="36dp"
+                                android:text="@string/btn_register_participant"
+                                android:textColor="@color/rl_primary" android:textSize="13sp"
+                                android:drawableStart="@drawable/ic_person_add"
+                                app:iconTint="@color/rl_primary"
+                                android:paddingHorizontal="8dp"/>
+                            <!-- Search field -->
+                            <LinearLayout android:layout_width="180dp" android:layout_height="36dp"
+                                android:background="@drawable/bg_search_field"
+                                android:orientation="horizontal" android:gravity="center_vertical"
+                                android:paddingHorizontal="8dp" android:layout_marginStart="8dp">
+                                <EditText android:id="@+id/etSearch"
+                                    android:layout_width="0dp" android:layout_height="match_parent"
+                                    android:layout_weight="1" android:hint="@string/hint_search_participant"
+                                    android:background="@null" android:textSize="13sp"
+                                    android:textColor="@color/rl_text_primary"
+                                    android:textColorHint="@color/rl_text_hint" android:singleLine="true"/>
+                                <ImageView android:layout_width="18dp" android:layout_height="18dp"
+                                    android:src="@drawable/ic_search_new" app:tint="@color/rl_text_hint"/>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <!-- Info banner -->
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:background="@drawable/bg_info_banner" android:orientation="horizontal"
+                            android:padding="10dp" android:layout_marginBottom="12dp">
+                            <ImageView android:layout_width="16dp" android:layout_height="16dp"
+                                android:src="@drawable/ic_info_outline" app:tint="@color/rl_primary"
+                                android:layout_marginEnd="6dp" android:layout_marginTop="1dp"/>
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                                android:layout_weight="1" android:text="@string/participants_info"
+                                android:textSize="12sp" android:textColor="@color/rl_info_text"
+                                android:lineSpacingMultiplier="1.3"/>
+                        </LinearLayout>
+
+                        <!-- Filters row -->
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:orientation="horizontal" android:gravity="center_vertical"
+                            android:layout_marginBottom="10dp">
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/tilFilterStatus"
+                                style="@style/RL.TextInputLayout.Dropdown"
+                                android:layout_width="0dp" android:layout_height="44dp"
+                                android:layout_weight="1" android:layout_marginEnd="6dp">
+                                <AutoCompleteTextView android:id="@+id/actvFilterStatus"
+                                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                                    android:inputType="none" android:hint="@string/filter_audio_status"
+                                    android:textSize="12sp"/>
+                            </com.google.android.material.textfield.TextInputLayout>
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/tilFilterReeval"
+                                style="@style/RL.TextInputLayout.Dropdown"
+                                android:layout_width="0dp" android:layout_height="44dp"
+                                android:layout_weight="1" android:layout_marginEnd="6dp">
+                                <AutoCompleteTextView android:id="@+id/actvFilterReeval"
+                                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                                    android:inputType="none" android:hint="@string/filter_needs_reeval"
+                                    android:textSize="12sp"/>
+                            </com.google.android.material.textfield.TextInputLayout>
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/tilFilterTestDone"
+                                style="@style/RL.TextInputLayout.Dropdown"
+                                android:layout_width="0dp" android:layout_height="44dp"
+                                android:layout_weight="1" android:layout_marginEnd="6dp">
+                                <AutoCompleteTextView android:id="@+id/actvFilterTestDone"
+                                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                                    android:inputType="none" android:hint="@string/filter_test_done"
+                                    android:textSize="12sp"/>
+                            </com.google.android.material.textfield.TextInputLayout>
+                            <Button android:id="@+id/btnApplyFilters" style="@style/RL.Button.Text"
+                                android:layout_width="wrap_content" android:layout_height="44dp"
+                                android:text="@string/btn_apply_filters" android:textColor="@color/rl_primary"
+                                android:textSize="12sp" android:drawableStart="@drawable/ic_filter_list"
+                                app:iconTint="@color/rl_primary" android:paddingHorizontal="8dp"/>
+                            <ImageButton android:id="@+id/btnSortFilter"
+                                android:layout_width="36dp" android:layout_height="36dp"
+                                android:src="@drawable/ic_filter_list" app:tint="@color/rl_primary"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                android:contentDescription="Filtros"/>
+                        </LinearLayout>
+
+                        <!-- Selection count row -->
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:orientation="horizontal" android:gravity="center_vertical"
+                            android:layout_marginBottom="8dp">
+                            <ImageView android:layout_width="18dp" android:layout_height="18dp"
+                                android:src="@drawable/ic_filter_list" app:tint="@color/rl_primary"
+                                android:layout_marginEnd="6dp"/>
+                            <TextView android:id="@+id/tvSelectedCount" android:layout_width="0dp"
+                                android:layout_height="wrap_content" android:layout_weight="1"
+                                android:text="0 selecionado(s)" android:textSize="13sp"
+                                android:textColor="@color/rl_primary"/>
+                            <ImageButton android:id="@+id/btnDeleteSelected"
+                                android:layout_width="36dp" android:layout_height="36dp"
+                                android:src="@drawable/ic_delete_outline" app:tint="@color/rl_text_hint"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                android:contentDescription="Excluir selecionados"/>
+                        </LinearLayout>
+
+                        <!-- Table header -->
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="36dp"
+                            android:orientation="horizontal" android:gravity="center_vertical"
+                            android:background="@color/rl_sub_header"
+                            android:paddingHorizontal="4dp">
+                            <CheckBox android:id="@+id/cbSelectAll" android:layout_width="36dp"
+                                android:layout_height="wrap_content" android:layout_gravity="center"/>
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                                android:layout_weight="3" android:text="@string/col_full_name"
+                                android:textSize="11sp" android:textColor="@color/rl_text_secondary"
+                                android:textStyle="bold"/>
+                            <TextView android:layout_width="90dp" android:layout_height="wrap_content"
+                                android:text="@string/col_test_done" android:textSize="11sp"
+                                android:textColor="@color/rl_text_secondary" android:textStyle="bold"
+                                android:gravity="center"/>
+                            <TextView android:layout_width="90dp" android:layout_height="wrap_content"
+                                android:text="@string/col_last_test" android:textSize="11sp"
+                                android:textColor="@color/rl_text_secondary" android:textStyle="bold"
+                                android:gravity="center"/>
+                            <TextView android:layout_width="80dp" android:layout_height="wrap_content"
+                                android:text="@string/col_audio_status" android:textSize="11sp"
+                                android:textColor="@color/rl_text_secondary" android:textStyle="bold"
+                                android:gravity="center"/>
+                            <TextView android:layout_width="90dp" android:layout_height="wrap_content"
+                                android:text="@string/col_needs_reeval" android:textSize="11sp"
+                                android:textColor="@color/rl_text_secondary" android:textStyle="bold"
+                                android:gravity="center"/>
+                            <TextView android:layout_width="40dp" android:layout_height="wrap_content"
+                                android:text="@string/col_actions" android:textSize="11sp"
+                                android:textColor="@color/rl_text_secondary" android:textStyle="bold"
+                                android:gravity="center"/>
+                        </LinearLayout>
+
+                        <!-- Participants list -->
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvParticipants"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:nestedScrollingEnabled="false"/>
+
+                        <!-- Pagination -->
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:orientation="horizontal" android:gravity="center_vertical"
+                            android:paddingVertical="8dp" android:layout_marginTop="8dp">
+                            <TextView android:id="@+id/tvShowingItems" android:layout_width="0dp"
+                                android:layout_height="wrap_content" android:layout_weight="1"
+                                android:text="Mostrando 0 de 0 itens" android:textSize="12sp"
+                                android:textColor="@color/rl_text_secondary"/>
+                            <ImageButton android:id="@+id/btnFirstPage" android:layout_width="32dp"
+                                android:layout_height="32dp" android:src="@drawable/ic_back"
+                                app:tint="@color/rl_text_hint"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                android:contentDescription="Primeira página"/>
+                            <ImageButton android:id="@+id/btnPrevPage" android:layout_width="32dp"
+                                android:layout_height="32dp" android:src="@drawable/ic_back"
+                                app:tint="@color/rl_primary"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                android:layout_marginHorizontal="2dp"
+                                android:contentDescription="Página anterior"/>
+                            <TextView android:id="@+id/tvCurrentPage" android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" android:text="01 / 1"
+                                android:textSize="13sp" android:textColor="@color/rl_text_primary"
+                                android:paddingHorizontal="8dp"/>
+                            <ImageButton android:id="@+id/btnNextPage" android:layout_width="32dp"
+                                android:layout_height="32dp" android:src="@drawable/ic_chevron_down"
+                                app:tint="@color/rl_primary"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                android:rotation="-90" android:layout_marginHorizontal="2dp"
+                                android:contentDescription="Próxima página"/>
+                            <ImageButton android:id="@+id/btnLastPage" android:layout_width="32dp"
+                                android:layout_height="32dp" android:src="@drawable/ic_chevron_down"
+                                app:tint="@color/rl_text_hint" android:rotation="-90"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                android:contentDescription="Última página"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- Start Test button -->
+        <Button android:id="@+id/btnStartTest" style="@style/RL.Button"
+            android:layout_width="match_parent" android:layout_height="52dp"
+            android:text="@string/btn_start_test_panel"
+            android:backgroundTint="@color/rl_primary" android:textColor="@color/rl_white"
+            android:textSize="16sp" android:textStyle="bold"/>
+    </LinearLayout>
+</LinearLayout>

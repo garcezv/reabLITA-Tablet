@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- reab.LITA light theme colors -->
+    <color name="rl_bg">#F0F2F5</color>
+    <color name="rl_card_bg">#FFFFFF</color>
+    <color name="rl_sub_header">#F5F5F5</color>
+    <color name="rl_divider">#E0E0E0</color>
+    <color name="rl_primary">#1565C0</color>
+    <color name="rl_primary_dark">#0D47A1</color>
+    <color name="rl_primary_light">#1E88E5</color>
+    <color name="rl_text_primary">#212121</color>
+    <color name="rl_text_secondary">#616161</color>
+    <color name="rl_text_hint">#9E9E9E</color>
+    <color name="rl_input_border">#BDBDBD</color>
+    <color name="rl_info_bg">#EBF4FF</color>
+    <color name="rl_info_border">#BBDEFB</color>
+    <color name="rl_info_text">#1A3C6E</color>
+    <color name="rl_red">#D32F2F</color>
+    <color name="rl_tag_audit_bg">#E3F2FD</color>
+    <color name="rl_tag_audit_text">#0D47A1</color>
+    <color name="rl_tag_ouvir_bg">#FCE4EC</color>
+    <color name="rl_tag_ouvir_text">#C62828</color>
+    <color name="rl_tag_normal_bg">#F5F5F5</color>
+    <color name="rl_tag_normal_text">#616161</color>
+    <color name="rl_tag_alterado_bg">#FFF9C4</color>
+    <color name="rl_tag_alterado_text">#F57F17</color>
+    <color name="rl_tag_sim_bg">#C8E6C9</color>
+    <color name="rl_tag_sim_text">#1B5E20</color>
+    <color name="rl_row_selected">#EBF4FF</color>
+    <color name="rl_white">#FFFFFF</color>
+    <!-- Warning dialog colors -->
+    <color name="rl_warning_bg">#FFFDE7</color>
+    <color name="rl_warning_btn">#FFC107</color>
+    <color name="rl_warning_text">#33260A</color>
+
+    <!-- Original dark theme (kept for MainActivity) -->
+    <color name="bg_primary">#0B0F14</color>
+    <color name="bg_card">#121A24</color>
+    <color name="text_primary">#E9EEF6</color>
+    <color name="text_muted">#A9B4C2</color>
+    <color name="color_ok">#5EE28A</color>
+    <color name="color_bad">#FF6B6B</color>
+    <color name="color_line">#203044</color>
+    <color name="color_accent">#8BB9FF</color>
+    <color name="border_color">#1C2A3A</color>
+    <color name="input_bg">#0F1722</color>
+    <color name="button_bg">#162334</color>
+    <color name="button_border">#24405B</color>
+    <color name="primary_button_bg">#1F3550</color>
+    <color name="primary_button_border">#2B4C6F</color>
+</resources>

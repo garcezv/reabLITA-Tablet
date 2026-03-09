@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Person head -->
+    <path
+        android:fillColor="#000000"
+        android:pathData="M12,12c2.21,0 4,-1.79 4,-4S14.21,4 12,4 8,5.79 8,8s1.79,4 4,4z"/>
+    <!-- Person body truncated for pencil space -->
+    <path
+        android:fillColor="#000000"
+        android:pathData="M12,14c-1.86,0 -5.33,0.93 -6.67,2.21C5.11,16.43 5,16.71 5,17v1a1,1 0,0 0,1 1h7.26C13.1,18.31 13,17.67 13,17c0,-0.9 0.2,-1.76 0.55,-2.53C13.07,14.04 12.54,14 12,14z"/>
+    <!-- Pencil icon (small, bottom right) -->
+    <path
+        android:fillColor="#000000"
+        android:pathData="M21.7,13.58l-1.28,-1.28a1,1 0,0 0,-1.41 0L15,16.29V19h2.71l4,-4a1,1 0,0 0,0 -1.42z"/>
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M15.5,17.5l1,-1 1,1-1,1z"/>
+</vector>

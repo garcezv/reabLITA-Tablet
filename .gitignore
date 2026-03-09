@@ -1,0 +1,33 @@
+# Gradle
+.gradle/
+build/
+app/build/
+
+# Local config (não compartilhar)
+local.properties
+
+# Keystore (segurança — não versionar)
+*.jks
+*.keystore
+
+# IDE - Android Studio
+.idea/caches/
+.idea/libraries/
+.idea/modules.xml
+.idea/workspace.xml
+.idea/navEditor.xml
+.idea/assetWizardSettings.xml
+.DS_Store
+.idea/deploymentTargetDropDown.xml
+.idea/deploymentTargetSelector.xml
+.idea/deviceManager.xml
+.idea/appInsightsSettings.xml
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Screenshots de desenvolvimento (raiz)
+screen_*.png
+
+# APK de release (usar GitHub Releases, não o repo)
+app/release/

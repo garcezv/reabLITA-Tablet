@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Original dark theme (for MainActivity) -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="colorPrimary">@color/primary_button_bg</item>
+        <item name="colorPrimaryDark">@color/bg_primary</item>
+        <item name="colorAccent">@color/color_accent</item>
+        <item name="android:windowBackground">@color/bg_primary</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textColorHint">@color/text_muted</item>
+    </style>
+
+    <!-- reab.LITA light theme for new screens -->
+    <style name="ReabLitaTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/rl_primary</item>
+        <item name="colorPrimaryDark">@color/rl_primary_dark</item>
+        <item name="colorAccent">@color/rl_primary</item>
+        <item name="android:windowBackground">@color/rl_bg</item>
+        <item name="android:textColor">@color/rl_text_primary</item>
+        <item name="android:textColorHint">@color/rl_text_hint</item>
+        <item name="android:statusBarColor">@color/rl_bg</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="materialButtonStyle">@style/RL.Button</item>
+        <item name="materialAlertDialogTheme">@style/RL.AlertDialog</item>
+    </style>
+
+    <style name="ReabLitaTheme.Fullscreen" parent="ReabLitaTheme">
+        <item name="android:windowBackground">@color/rl_card_bg</item>
+    </style>
+
+    <style name="RL.Button" parent="Widget.MaterialComponents.Button">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
+    <style name="RL.Button.Outlined" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
+    <style name="RL.Button.Text" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
+    <style name="RL.AlertDialog" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="colorPrimary">@color/rl_primary</item>
+        <item name="colorAccent">@color/rl_primary</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="RL.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/rl_input_border</item>
+        <item name="hintTextColor">@color/rl_text_hint</item>
+        <item name="hintAnimationEnabled">false</item>
+        <item name="expandedHintEnabled">false</item>
+    </style>
+
+    <style name="RL.TextInputLayout.Dropdown" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <item name="boxStrokeColor">@color/rl_input_border</item>
+        <item name="hintTextColor">@color/rl_text_hint</item>
+        <item name="hintAnimationEnabled">false</item>
+        <item name="expandedHintEnabled">false</item>
+    </style>
+
+    <!-- Side menu slide animation -->
+    <style name="SideMenuAnimation">
+        <item name="android:windowEnterAnimation">@anim/slide_in_from_left</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_to_left</item>
+    </style>
+</resources>

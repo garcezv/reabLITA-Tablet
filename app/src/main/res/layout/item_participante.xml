@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:paddingHorizontal="4dp"
+    android:paddingVertical="4dp"
+    android:background="?attr/selectableItemBackground">
+
+    <CheckBox
+        android:id="@+id/cbSelect"
+        android:layout_width="36dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"/>
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:textSize="13sp"
+        android:textColor="@color/rl_text_primary"
+        android:ellipsize="end"
+        android:singleLine="true"/>
+
+    <FrameLayout
+        android:layout_width="90dp"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+        <TextView
+            android:id="@+id/tvTestDone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="11sp"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="3dp"/>
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tvLastTestDate"
+        android:layout_width="90dp"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textColor="@color/rl_text_secondary"
+        android:gravity="center"/>
+
+    <FrameLayout
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+        <TextView
+            android:id="@+id/tvAudioStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="11sp"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="3dp"/>
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tvNeedsReeval"
+        android:layout_width="90dp"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textColor="@color/rl_text_secondary"
+        android:gravity="center"/>
+
+    <ImageButton
+        android:id="@+id/btnActions"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_more_vert_new"
+        app:tint="@color/rl_text_hint"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Ações"/>
+</LinearLayout>

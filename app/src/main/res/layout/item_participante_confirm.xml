@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="52dp"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:paddingHorizontal="16dp"
+    android:paddingVertical="4dp">
+
+    <!-- Drag handle icon (≡) -->
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/ic_hamburger"
+        app:tint="@color/rl_text_hint"
+        android:layout_marginEnd="12dp"
+        android:contentDescription="Reordenar"/>
+
+    <!-- Participant name -->
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="14sp"
+        android:textColor="@color/rl_text_primary"
+        android:ellipsize="end"
+        android:singleLine="true"/>
+
+    <!-- Delete button -->
+    <ImageButton
+        android:id="@+id/btnRemoveParticipant"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:src="@drawable/ic_delete_outline"
+        app:tint="@color/rl_red"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Remover"/>
+</LinearLayout>
