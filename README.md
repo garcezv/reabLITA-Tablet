@@ -1,4 +1,4 @@
-# reab.LITA Tablet
+# reab.LITA Tablet (aplicativo para Android)
 
 Aplicativo Android para **triagem auditiva pediátrica** desenvolvido para a Rede reabLITA, voltado ao uso em tablets de 10 polegadas por facilitadores treinados. Integra os módulos **aud.IT** (triagem pediátrica) e **Ouvir Brasil** (triagem rápida +18).
 
